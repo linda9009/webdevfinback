@@ -1,24 +1,19 @@
-const { Campus, Student } = require('../models');
+const { Page, Result } = require('../models');
 
 const seedDB = async () => {
-	const dummy_campus = await Campus.create({
-		name: "Hunter College",
-		address: "695 Park Ave, New York, NY 10065",
-		description: "This is a school in NYC."
+	const dummy_page = await Page.create({
+		number: "1"
 	});
-	const dummy_campus2 = await Campus.create({
-		name: "Harvard",
-		address: "86 Brattle Street Cambridge, MA 02138",
-		description: "This is a school in MA."
+	const dummy_page2 = await Page.create({
+		number: "2"
 	});
-
-	const dummy_student = await Student.create({
-			firstname: "Joe",
-      		lastname: "Shmo",
-	  		email: "Joes@gmail.com"
+	const dummy_result = await Result.create({
+			title: "Outer Space",
+			resultUrl: "google.com",
+	  		description: "Space is Cool"
 		});
 
-	await dummy_student.setCampus(dummy_campus);
+	await dummy_result.setPage(dummy_page);
 	
 }
 

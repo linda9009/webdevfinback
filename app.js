@@ -54,7 +54,7 @@ const configureApp = async () => {
 };
 
 const bootApp = async () => {
-  await createDB();
+  // await createDB();
   await syncDatabase();
   await configureApp();
 };

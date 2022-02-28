@@ -1,27 +1,24 @@
+const { DECIMAL } = require('sequelize');
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const Campus = db.define("campus", {
+const Result = db.define("result", {
 
-  name: {
+  title: {
     type: Sequelize.STRING,
     allowNull: false
   },
 
-  imageUrl: {
-    type: Sequelize.STRING,
-    defaultValue: "imgs/default.jpg",
-  },
-
-  address: {
+  resultUrl: {
     type: Sequelize.STRING,
     allowNull: false
   },
 
   description: {
-    type: Sequelize.TEXT('long')
+    type: Sequelize.STRING,
+    allowNull: false
   }
 
 });
 
-module.exports = Campus;
+module.exports = Result;
